@@ -47,7 +47,6 @@ function addListeners() {
     buttonEL[i].addEventListener("click", function (event) {
       var text = event.path[1].childNodes[3].value
       var time = this.id
-      console.log(localStorage.getItem('save10'))
       localStorage.setItem(time, text);
     })
   }
