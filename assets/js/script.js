@@ -1,22 +1,17 @@
 buttonEL = document.getElementsByClassName('saveBtn')
 inputEL = document.querySelectorAll('input')
 
-
-let nine = document.getElementById('9');
-let ten = document.getElementById('10');
-let eleven = document.getElementById('11');
-let twelve = document.getElementById('12');
-let thirteen = document.getElementById('13');
-let fourteen = document.getElementById('14');
-let fifteen = document.getElementById('15');
-let sixteen = document.getElementById('16');
-let seventeen = document.getElementById('17');
+let input9 = document.getElementById('9');
+let input10 = document.getElementById('10');
+let input11 = document.getElementById('11');
+let input12 = document.getElementById('12');
+let input13 = document.getElementById('13');
+let input14 = document.getElementById('14');
+let input15 = document.getElementById('15');
+let input16 = document.getElementById('16');
+let input17 = document.getElementById('17');
 let currentHour = parseInt(moment().format('H'));
 let row = document.getElementsByClassName("todoRow");
-let toDoList = [];
-
-
-
 
 init();
 
@@ -49,31 +44,23 @@ function addTodoColor() {
 
 function addListeners() {
   for (let i = 0; i < buttonEL.length; i++) {
-    buttonEL[i].addEventListener("click", function () {
-      console.log('test')
-
-      let valueNine = nine.value;
-      localStorage.setItem([i], valueNine);
-    });
+    buttonEL[i].addEventListener("click", function (event) {
+      var text = event.path[1].childNodes[3].value
+      var time = this.id
+      console.log(localStorage.getItem('save10'))
+      localStorage.setItem(time, text);
+    })
   }
 }
 
 function updateContent() {
-  nine.innerHTML = localStorage.getItem[0];
-  ten.innerHTML = localStorage.getItem("ten");
-  eleven.innerHTML = localStorage.getItem("eleven");
-  twelve.innerHTML = localStorage.getItem("twelve");
-  thirteen.innerHTML = localStorage.getItem("one");
-  fourteen.innerHTML = localStorage.getItem("two");
-  fifteen.innerHTML = localStorage.getItem("three");
-  sixteen.innerHTML = localStorage.getItem("four");
-  seventeen.innerHTML = localStorage.getItem("five");
-}
-
-
-
-/* function updateContent() {
-  for (let i = 0; i < localStorage.length; i++) {
-    inputEL[i].value = localStorage.getItem[i]
+    input9.value = localStorage.getItem('save9')
+    input10.value = localStorage.getItem('save10')
+    input11.value = localStorage.getItem('save11')
+    input12.value = localStorage.getItem('save12')
+    input13.value = localStorage.getItem('save13')
+    input14.value = localStorage.getItem('save14')
+    input15.value = localStorage.getItem('save15')
+    input16.value = localStorage.getItem('save16')
+    input17.value = localStorage.getItem('save17')
   }
-} */
